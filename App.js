@@ -1,11 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import LightSensor from 'react-native-light-sensor';
 
+// const { LightSensorModule } = NativeModules;
 export default function App() {
+  const [light, setLight] = useState("LUX")
+  //LightSensor.startLightSensor(100);
+  // DeviceEventEmitter.addListener('LightSensor', function (data) {
+    // console.log(data.light)
+    // setLight(data.light)
+  // });
+  // LightSensor.stopLightSensor();
+  console.log(LightSensor);
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>LightSensor reading: {light}</Text>
       <StatusBar style="auto" />
     </View>
   );
